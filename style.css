@@ -1,0 +1,100 @@
+.container {
+    display: grid;
+    grid-gap: 5px;
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px
+    }
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 100px);
+    }
+}
+
+/*>=1024的设备*/
+
+@media (min-width: 1100px) {
+    body {
+        font-size: 20px
+    }
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 100px);
+    }
+}
+
+/*>=1100的设备*/
+
+@media (min-width: 1280px) {
+    body {
+        font-size: 22px;
+    }
+}
+
+/*>=1280的设备*/
+
+@media (min-width: 1366px) {
+    body {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1440px) {
+    body {
+        font-size: 25px !important;
+    }
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 100px);
+    }
+}
+
+@media (min-width: 1680px) {
+    body {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 33px;
+    }
+    .container {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 100px);
+    }
+}
+
+.item {
+    text-align: center;
+    line-height: 100px;
+    color: #FFFFCC;
+    font-size: 1rem;
+    margin: 1px;
+}
+
+.item1 {
+    background-color: #FF6600;
+}
+
+.item2 {
+    background-color: #CC9999;
+}
+
+.item3 {
+    background-color: #666699;
+}
+
+.item4 {
+    background-color: #FF6666;
+}
+
+.item5 {
+    background-color: #009999;
+}
+
+.item6 {
+    background-color: #99CC00;
+}

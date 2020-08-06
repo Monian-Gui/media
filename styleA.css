@@ -1,0 +1,73 @@
+body {
+    font-size: 16px;
+}
+/* 基础响应单位: fraction
+CSS 栅格布局带来了一个全新的值:fraction单位，fraction单位通常简写为fr，它允许你根据需要将容器拆分为多个块。
+结果是栅格布局将会把整个宽度分成三个 fraction，每列占据一个 fraction 单位
+*/
+/* .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-rows: 50px 50px;
+} */
+
+/* ，repeat(3, 100px)等于100px 100px 100px。第一个参数指定行与列的数量，
+第二个参数指定它们的宽度，因此它将为我们提供与开始时完全相同的布局：
+auto-fit
+然后是auto-fit。让我们跳过固定数量的列，将3替换为自适应数量：
+
+现在，栅格将会根据容器的宽度调整其数量。它会尝试在容器中容纳尽可能多的 100px 宽的列。
+但如果我们将所有列硬写为 100px，我们将永远没法获得所需的弹性，因为它们很难填充整个宽度。
+正如你在上图看到的，网格通常在右侧留有空白。
+ */
+/* .container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-template-rows: repeat(2, 100px);
+} */
+
+
+/* 为了解决上述问题，我们需要minmax()。我们将 100px 替换为 minmax(100px, 1fr)，代码如下：
+正如你所见，效果完美。minmax()函数定义的范围大于或等于 min， 小于或等于 max。
+因此，现在每列将至少为 100px。但如果有更多的可用空间，栅格布局将简单地将其均分给每列，因为这些列变成了 fraction 单位，而不是 100px。
+*/
+
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* grid-template-rows: repeat(auto-fit,  minmax(100px, 1fr)); */
+}
+
+.item{
+    text-align: center;
+    line-height: 100px;
+    color: #FFFFCC;
+    font-size: 1rem;
+    /* margin: 1px; */
+}
+.item1{
+    background-color: #FF6600;
+}
+.item2{
+    background-color: #CC9999;
+}
+.item3{
+    background-color: #666699;
+}
+.item4{
+    background-color: #FF6666;
+}
+.item5{
+    background-color: #009999;
+}
+.item6{
+    background-color: #99CC00;
+}
+
+.container > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
